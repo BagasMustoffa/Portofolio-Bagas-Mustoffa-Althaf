@@ -540,7 +540,8 @@ html {
 @media (max-width: 480px) {
   .hero-nav ul {
     flex-wrap: nowrap;        /* tetap 1 baris */
-    gap: 0.5rem;              /* jarak antar item diperkecil */
+    gap: 0.5rem;
+    justify-content: flex-start;
   }
   .hero-nav ul li a {
     font-size: 0.75rem;       /* perkecil teks */
@@ -548,10 +549,19 @@ html {
   }
 }
 
+@media (min-width: 768px) {
+  .hero-nav {
+    overflow-x: visible;             /* tidak perlu scroll di PC */
+  }
+  .hero-nav ul {
+    justify-content: center;         /* pusat di PC */
+  }
+}
+
 /* Default: desktop horizontal */
 .hero-nav ul {
   display: flex;
-  justify-content: center;
+
   align-items: center;
   flex-wrap: nowrap;       /* 👉 penting: boleh pindah ke baris baru jika sempit */
   gap: 1rem;             /* jarak antar menu lebih kecil dari desktop */
@@ -584,12 +594,3 @@ html {
 .hero-nav li a:hover::after {
   width: 100%;
 }
-
-/* .hero-nav ul {
-  justify-content: flex-start;
-} */
-
-/* .hero-nav::-webkit-scrollbar {
-  display: none;                 
-} */
-/* sembunyikan scrollbar (opsional) */
