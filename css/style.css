@@ -1,0 +1,730 @@
+/* ===== Global ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  line-height:1.6;
+  color:#333;
+  background:#fdfdfd;
+  transition: background 0.3s, color 0.3s;
+  padding-top: 50px;
+}
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:3rem auto;
+}
+h2{text-align:center;margin-bottom:2rem;font-size:2rem;color:#222;}
+a{text-decoration:none;color:inherit;}
+.btn{
+  display:inline-block;
+  background:#00c896;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:25px;
+  font-weight:600;
+  transition:0.3s;
+  /* ... properti lainnya ... */
+  border: none; /* Menghilangkan border hitam */
+  outline: none; /* Menghilangkan garis outline saat di-klik/fokus */
+}
+.btn:hover{background:#00a67a;}
+
+/* ===== Navbar ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 5%;
+  background:#222;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-links li{display:inline-block;margin-left:20px;}
+.nav-links a{color:#fff;font-weight:600;}
+.nav-links a:hover{color:#ffd700;}
+#theme-toggle{
+  margin-left:20px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+
+/* ===== Hero ===== */
+/* .hero{
+  text-align:center;
+  padding:4rem 2rem;
+  background:linear-gradient(to right,#6a11cb,#2575fc);
+  color:#fff;
+}
+.hero h2{font-size:2rem;margin-bottom:1rem;}
+.hero p{font-size:1.1rem;margin-bottom:1.5rem;} */
+
+
+/* ===== Experience ===== */
+#experience article{margin-bottom:2rem;}
+#experience h3{color:#333;;margin-bottom:0.5rem;}
+#experience ul{margin-left:1.5rem;list-style:disc;}
+
+/* ===== Contact ===== */
+form{
+  display:flex;
+  flex-direction:column;
+  max-width:600px;
+  margin:0 auto;
+}
+form input,form textarea{
+  margin-bottom:1rem;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+form textarea{min-height:120px;}
+.note{text-align:center;margin-top:1rem;font-size:0.9rem;color:#0eac3d;}
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:2rem;
+  background:#222;
+  color:#fff;
+  margin-top:3rem;
+}
+
+/* ===== Dark Mode ===== */
+body.dark{
+  background:#121212;
+  color:#e0e0e0;
+}
+body.dark h2{color:#fff;}
+body.dark .navbar{background:#1e1e1e;}
+body.dark .nav-links a:hover{color:#ffd700;}
+body.dark footer{background:#1e1e1e;}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  .nav-links li{display:block;margin:10px 0;}
+}
+
+.experience-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00c896;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.experience-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 2.0rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.experience-card h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  
+}
+
+.experience-date {
+  display: block;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.experience-card p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.experience-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  line-height: 1.5;
+}
+
+.experience-card ul li {
+    color: #333;       /* atau var(--text-color-light) sesuai tema */
+    opacity: 1;        /* pastikan tidak pudar */
+}
+
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+  .experience-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/**\
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: #005600; /* gradient bisa ditambah jika mau */
+  color: #fff;
+  text-align: center;
+  padding: 10rem 2rem;
+  position: relative;
+  width: auto;
+}
+
+.hero-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00c896;
+  margin-bottom: 3rem;
+  margin-top: -5rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.hero-name {
+  color: #00ffbf;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling untuk bagian ikon sosial media */
+.hero-socials {
+  margin-top: 1.5rem; /* Memberi jarak dari teks di atasnya */
+}
+
+.hero-socials a {
+  color: #fff; /* Warna ikon putih */
+  font-size: 2rem; /* Ukuran ikon */
+  margin: 0 0.75rem; /* Jarak antar ikon */
+  transition: color 0.3s ease; /* Transisi saat di-hover */
+}
+
+.hero-socials a:hover {
+  color: #00c896; /* Warna ikon saat di-hover */
+}
+
+/* nav bawah hero */
+.hero-nav {
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;   
+  top: 0;            
+  left: 0;
+  width: 100%;       
+  z-index: 1000;     
+  background: #ffffff;  
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+/* ===== Skills Section ===== */
+.skills-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.skills-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill-name {
+  display: inline-block;
+  width: 160px;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;       /* atau var(--text-color-light) sesuai tema */
+  opacity: 1;        /* pastikan tidak pudar */
+}
+
+.skill-bar {
+  background: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+
+/* Progress bar default: lebar 0, nanti diisi via JS */
+.skill-level {
+  width: 0;
+  height: 10px;
+  background: #00c896;
+  border-radius: 10px 0 0 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .skill-name {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* .hero-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  gap: 2rem;
+} */
+
+.hero-nav li {
+  margin: 0 0.75rem;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  color: #2e4756;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0;
+  position: relative;
+}
+.hero-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00c896;
+  transition: width 0.3s;
+}
+.hero-nav a:hover::after {
+  width: 100%;
+}
+
+.theme-toggle button {
+  background: #00c896;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.theme-toggle button:hover {
+  background: #00a67a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* Ganti dengan tinggi navbar Anda */
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 2.0rem;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+  color: #333;       /* atau var(--text-color-light) sesuai tema */
+  opacity: 1;        /* pastikan tidak pudar */
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #555;
+  margin-bottom: 1.5rem;
+  word-wrap: break-word; /* Mengatur pemotongan kata untuk browser lama */
+  overflow-wrap: break-word; /* Versi modern */
+}
+
+.project-btn {
+  background: #00c896;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #00a67a;
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== EDUCATION SECTION ===== */
+.education-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-card {
+  background: #ffffff;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.education-card h3 {
+    color: #333;       /* atau var(--text-color-light) sesuai tema */
+    opacity: 1;        /* pastikan tidak pudar */
+}
+
+.education-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-card p {
+  color: #555;
+}
+
+/* Styling untuk teks "Or reach me directly on WhatsApp" */
+.whatsapp-text {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.whatsapp-link {
+  color: #007bff; /* Warna biru */
+  text-decoration: underline; /* Garis bawah */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Mengubah warna saat di-hover */
+.whatsapp-link:hover {
+  color: #0056b3;
+}
+
+.cv-download-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.btn-download {
+  display: inline-block;
+  background-color: #00c896;
+  color: #fff;
+  padding: 12px 50px;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #00a67a;
+}
+
+/* ======== RESPONSIVE LAYOUT ======== */
+
+/* Tablet: max lebar 992px */
+/* @media (max-width: 992px) {
+
+  .hero-nav ul {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero-section {
+    padding: 6rem 2rem; 
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .skills-container {
+    padding: 1.5rem;
+  }
+
+  .skill-name {
+    width: 120px;
+  }
+} */
+
+/* Mobile: max lebar 768px */
+/* @media (max-width: 768px) {
+
+  .hero-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-nav li {
+    margin: 0.5rem 0;
+  }
+
+  .hero-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .skill-name {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .experience-card,
+  .project-card,
+  .education-card {
+    margin: 1rem 0;
+    padding: 1.2rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+} */
+
+/* Extra Small (hp < 480px) */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==== Responsive Navbar ==== */
+/* @media (max-width: 768px) {
+
+  .hero-nav ul {
+    flex-direction: column;          
+    align-items: center;             
+    gap: 1rem;                       
+    padding: 1rem 0;
+  }
+
+  .hero-nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.1rem;
+  }
+} */
+
+/* opsional: untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+/* ==== NAVBAR Default (Desktop) ==== */
+/* .hero-nav ul {
+  display: flex;                 
+  justify-content: center;        
+  align-items: center;
+  gap: 2rem;                      
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+/* pastikan <li> dan <a> inline */
+/* .hero-nav ul li {
+  display: inline-block;
+} */
+/* .hero-nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: .3rem;                     
+  text-decoration: none;
+  font-weight: 600;
+} */
+
+/* ==== Responsive: ubah ke kolom saat mobile ==== */
+/* @media (max-width: 768px) {
+  .hero-nav ul {
+    flex-direction: column;       
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .hero-nav ul li {
+    display: block;
+    text-align: center;
+  }
+} */
+
+/* ======= NAVBAR RESPONSIVE FINAL ======= */
+
+/* Default: desktop horizontal */
+.hero-nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+.hero-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #2e4756;
+  position: relative;
+}
+
+/* underline hover */
+.hero-nav li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00c896;
+  transition: width 0.3s;
+}
+.hero-nav li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive: tumpuk ke bawah */
+/* @media (max-width: 768px) {
+  .hero-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  .hero-nav li {
+    margin: 0;
+  }
+} */
