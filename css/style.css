@@ -251,7 +251,9 @@ body.dark footer{background:#1e1e1e;}
   width: 100%;       
   z-index: 1000;     
   background: #ffffff;  
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-x: auto;                  /* aktifkan scroll horizontal */
+  -webkit-overflow-scrolling: touch; /* halus di iOS */
 }
 
 /* ===== Skills Section ===== */
@@ -310,16 +312,6 @@ body.dark footer{background:#1e1e1e;}
     margin-bottom: 0.5rem;
   }
 }
-
-/* .hero-nav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  gap: 2rem;
-} */
 
 .hero-nav li {
   margin: 0 0.75rem;
@@ -519,80 +511,6 @@ html {
   background-color: #00a67a;
 }
 
-/* ======== RESPONSIVE LAYOUT ======== */
-
-/* Tablet: max lebar 992px */
-/* @media (max-width: 992px) {
-
-  .hero-nav ul {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .hero-section {
-    padding: 6rem 2rem; 
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .skills-container {
-    padding: 1.5rem;
-  }
-
-  .skill-name {
-    width: 120px;
-  }
-} */
-
-/* Mobile: max lebar 768px */
-/* @media (max-width: 768px) {
-
-  .hero-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-nav li {
-    margin: 0.5rem 0;
-  }
-
-  .hero-section {
-    padding: 5rem 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .skill-name {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    text-align: left;
-  }
-
-  .experience-card,
-  .project-card,
-  .education-card {
-    margin: 1rem 0;
-    padding: 1.2rem;
-  }
-
-  form {
-    width: 100%;
-    padding: 0 1rem;
-  }
-} */
-
 /* Extra Small (hp < 480px) */
 @media (max-width: 480px) {
 
@@ -609,30 +527,6 @@ html {
   }
 }
 
-/* ==== Responsive Navbar ==== */
-/* @media (max-width: 768px) {
-
-  .hero-nav ul {
-    flex-direction: column;          
-    align-items: center;             
-    gap: 1rem;                       
-    padding: 1rem 0;
-  }
-
-  .hero-nav ul li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-nav ul li a {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 1.1rem;
-  }
-} */
-
 /* opsional: untuk layar sangat kecil */
 @media (max-width: 480px) {
   .hero-title {
@@ -640,43 +534,6 @@ html {
     text-align: center;
   }
 }
-
-/* ==== NAVBAR Default (Desktop) ==== */
-/* .hero-nav ul {
-  display: flex;                 
-  justify-content: center;        
-  align-items: center;
-  gap: 2rem;                      
-  list-style: none;
-  margin: 0;
-  padding: 0;
-} */
-
-/* pastikan <li> dan <a> inline */
-/* .hero-nav ul li {
-  display: inline-block;
-} */
-/* .hero-nav ul li a {
-  display: flex;
-  align-items: center;
-  gap: .3rem;                     
-  text-decoration: none;
-  font-weight: 600;
-} */
-
-/* ==== Responsive: ubah ke kolom saat mobile ==== */
-/* @media (max-width: 768px) {
-  .hero-nav ul {
-    flex-direction: column;       
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .hero-nav ul li {
-    display: block;
-    text-align: center;
-  }
-} */
 
 /* ======= NAVBAR RESPONSIVE FINAL ======= */
 
@@ -691,13 +548,12 @@ html {
   }
 }
 
-
 /* Default: desktop horizontal */
 .hero-nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;       /* 👉 penting: boleh pindah ke baris baru jika sempit */
+  flex-wrap: nowrap;       /* 👉 penting: boleh pindah ke baris baru jika sempit */
   gap: 1rem;             /* jarak antar menu lebih kecil dari desktop */
   padding: 0.5rem 1rem;
   list-style: none;
@@ -728,3 +584,12 @@ html {
 .hero-nav li a:hover::after {
   width: 100%;
 }
+
+/* .hero-nav ul {
+  justify-content: flex-start;
+} */
+
+/* .hero-nav::-webkit-scrollbar {
+  display: none;                 
+} */
+/* sembunyikan scrollbar (opsional) */
