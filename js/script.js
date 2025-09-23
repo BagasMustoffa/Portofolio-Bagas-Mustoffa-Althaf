@@ -38,5 +38,3 @@ const observer = new IntersectionObserver(entries => {
 
 // observe setiap skill bar
 skillLevels.forEach(bar => observer.observe(bar));
-
-
